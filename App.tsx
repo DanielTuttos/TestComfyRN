@@ -1,36 +1,13 @@
-
 import React from 'react';
-import {
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-  View,
-} from 'react-native';
-import { LoginScreen } from './src/screens/LoginScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import {Navigator} from './src/components/Navigator';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  // const navigation = useNavigation(); 
-
   return (
-    <View style={styles.backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={styles.backgroundStyle.backgroundColor}
-      />
-      <LoginScreen />
-    </View>
+    <NavigationContainer>
+      <Navigator />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  backgroundStyle: {
-    flex: 1,
-    backgroundColor: '#fff',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-  },
-});
 
 export default App;
