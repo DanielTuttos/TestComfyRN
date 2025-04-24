@@ -1,34 +1,38 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, Image, Text, View} from 'react-native';
+import {
+  ActivityIndicator,
+  Alert,
+  FlatList,
+  Image,
+  Text,
+  View,
+} from 'react-native';
+import {styles} from './styles';
+import {useGetProducts} from '../../api/useGetProducts';
+import {CardProducts} from '../../components/CardProducts';
 
 export const HomeScreen = () => {
-  const [products, setproducts] = useState<any>([]);
-  useEffect(() => {
-    getData();
-  }, []);
+  const {error, loading, result} = useGetProducts();
 
-  const getData = async () => {
-    try {
-      const response = await fetch('https://fakestoreapi.com/products');
-      const data = await response.json();
-      console.log('data: ', {data});
-      setproducts(data);
-    } catch (error) {
-      console.log('error: ', {error});
+  useEffect(() => {
+    if (error) {
+      Alert.alert('Error', error);
     }
-  };
+  }, [error]);
+
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <FlatList
-        data={products}
-        renderItem={({item}) => (
-          <View>
-            <Text>{item.title}</Text>
-            <Image source={{uri: item.image}} style={{width: 100, height: 100}} />
-          </View>
-        )}
-      />
-      <Text>HomeScreen</Text>
+    <View style={styles.container}>
+      {loading ? (
+        <>
+          <ActivityIndicator size="large" color="#2989ef" />
+          <Text style={styles.textLoading}>Cargando...</Text>
+        </>
+      ) : (
+        <FlatList
+          data={result}
+          renderItem={({item}) => <CardProducts product={item} />}
+        />
+      )}
     </View>
   );
 };
