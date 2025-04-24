@@ -2,6 +2,25 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
+Se puede ejecutar el proyecto con el siguiente comando:
+
+```sh
+npx react-native run-android
+```
+
+o
+
+```sh
+npx react-native run-ios
+```
+
+Para el login se utiliza la siguiente información:
+
+- Usuario: daniel
+- Contraseña: 123456
+
+## Requirements
+
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
 ## Step 1: Start Metro
