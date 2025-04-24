@@ -14,7 +14,7 @@ export const Navigator = () => {
         component={LoginScreen}
       />
       <Stack.Screen
-        options={{title: 'Home'}}
+        options={{title: 'Productos'}}
         name="Home"
         component={HomeScreen}
       />
