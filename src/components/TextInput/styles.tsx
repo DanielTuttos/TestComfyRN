@@ -13,4 +13,10 @@ export const styles = StyleSheet.create({
     // top: 10,
     marginTop: 10,
   },
+  textError: {
+    color: 'red',
+    fontSize: 12,
+    alignSelf: 'flex-start',
+    paddingHorizontal: 40
+  }
 });

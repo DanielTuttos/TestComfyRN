@@ -11,6 +11,8 @@ import { LoginScreen } from './src/screens/LoginScreen';
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
+  // const navigation = useNavigation(); 
+
   return (
     <View style={styles.backgroundStyle}>
       <StatusBar

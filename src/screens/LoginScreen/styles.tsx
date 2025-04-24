@@ -6,13 +6,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  button: {
-    backgroundColor: '#9fc6f0',
-    padding: 10,
-    borderRadius: 10,
+  textTitle: {
+    fontSize: 30,
+    fontWeight: 'bold',
     marginTop: 20,
-    width: '80%',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  image: {
+    width: 110,
+    height: 110,
   }
 });
